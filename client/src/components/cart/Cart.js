@@ -20,10 +20,8 @@ const Cart = () => {
     <div className="Cart" onClick={() => dispatch(setCartClicked(true))}>
       <div className="item-amount">
         <FontAwesomeIcon className="mr-2" icon={faShoppingBag} />
-        {cartSize.length}{" "}
-        {cartSize.length < 2
-          ? t("LABEL_SHOP_CART_ITEM")
-          : t("LABEL_SHOP_CART_ITEMS")}
+        {cartSize}{" "}
+        {cartSize < 2 ? t("LABEL_SHOP_CART_ITEM") : t("LABEL_SHOP_CART_ITEMS")}
       </div>
       <div className="total-price">
         <p>{formatPrice(totalBasket)}</p>

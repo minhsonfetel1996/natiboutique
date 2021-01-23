@@ -51,10 +51,7 @@ export const getCartItems = (state) => {
 
 export const getCartItemsSize = (state) => {
   return state.cartReducer.cart.items
-    ? state.cartReducer.cart.items.reduce(
-        (e1, e2) => e1.quantity + e2.quantity,
-        0
-      )
+    ? state.cartReducer.cart.items.reduce((e1, e2) => e1 + e2.quantity, 0)
     : 0;
 };
 

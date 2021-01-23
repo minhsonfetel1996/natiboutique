@@ -55,7 +55,7 @@ const Product = ({ item }) => {
               <div
                 key={index}
                 className="product-card__colorways_item"
-                onMouseOver={(event) => {
+                onClick={(event) => {
                   event.preventDefault();
                   onColorWayClicked(colorwayImg);
                 }}

@@ -20,7 +20,7 @@ export function* addToCart(action) {
   if (data) {
     yield put({
       type: SET_CART_ITEMS_ACTION,
-      json: { ...data, isCartClicked: true },
+      json: { ...data },
     });
   }
 }

@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getCurrentUser, logout } from "../store/AuthReducer";
+import { getCurrentUser } from "../store/AuthReducer";
 import Burger from "./Burger";
 
 const HeaderUserInfo = () => {
   const [active, setActive] = useState(false);
-  const dispatch = useDispatch();
   const user = useSelector(getCurrentUser);
   const { t } = useTranslation();
 
   const handleBtnClick = () => {
     setActive(!active);
-  };
-
-  const onLogoutClicked = () => {
-    dispatch(logout());
   };
 
   return (

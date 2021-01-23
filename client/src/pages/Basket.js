@@ -1,4 +1,4 @@
-import { faShare, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import { Button, Col, Image, Row } from "react-bootstrap";
@@ -150,7 +150,7 @@ const BasketPage = () => {
           </div>
           <div className="promotion-form">
             <Row>
-              <Col md={9} className="pl-0 pr-0">
+              <Col md={8} sm={9} className="pl-0 pr-0">
                 <TextBoxComponent
                   label={t("LABEL_PROMOTION_CODE")}
                   id="tb-promotion"
@@ -160,7 +160,7 @@ const BasketPage = () => {
                   required={true}
                 />
               </Col>
-              <Col md={3} className="pl-0 pr-0">
+              <Col md={4} sm={3} className="pl-0 pr-0">
                 <Button className="btn-apply-promotion" disabled={true}>
                   {t("LABEL_APPLY")}
                 </Button>
