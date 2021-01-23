@@ -23,13 +23,13 @@ const App = () => {
 
   useEffect(() => {
     let listener = document.addEventListener("click", function (event) {
-      if (event) {
-        event.preventDefault();
-      }
+      let timeout;
       if (isCartOpen) {
-        setTimeout(() => {
+        timeout = setTimeout(() => {
           dispatch(setCartClicked(false));
-        }, 2000);
+        }, 5000);
+      } else {
+        clearTimeout(timeout);
       }
     });
     return () => {
@@ -37,7 +37,7 @@ const App = () => {
         listener();
       }
     };
-  });
+  }, [isCartOpen, dispatch]);
 
   return (
     <div className="App">
