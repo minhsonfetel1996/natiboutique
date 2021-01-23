@@ -1,0 +1,9 @@
+#checkout-container {
+  margin: 100px 30vw auto 30vw;
+}
+
+@media screen and (max-width: 980px) {
+  #checkout-container {
+    margin: 60px 8vw auto 2vw;
+  }
+}

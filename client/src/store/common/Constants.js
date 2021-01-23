@@ -1,0 +1,39 @@
+// Auth action types
+
+export const SET_USER_ACTION = "SET_USER";
+export const FETCH_USER_ACTION = "FETCH_USER";
+export const LOGOUT_ACTION = "LOGOUT";
+export const REMOVE_USER_ACTION = "REMOVE_USER";
+export const SET_CHECKOUT_CLICKED_ACTION = "SET_CHECKOUT_CLICKED";
+
+// Cart action types
+export const SET_CART_CLICKED_ACTION = "SET_CART_CLICKED";
+export const ADD_TO_CART_ACTION = "ADD_TO_CART";
+export const SET_CART_ITEMS_ACTION = "SET_CART_ITEMS";
+export const REMOVE_ITEM_ACTION = "REMOVE_ITEM";
+
+// Products action types
+
+export const GET_PRODUCTS_ACTION = "GET_PRODUCTS";
+export const SET_PRODUCTS_ACTION = "SET_PRODUCTS";
+export const SET_CATEGORY_ACTION = "SET_CATEGORY";
+export const SET_KEYWORD_ACTION = "SET_KEYWORD";
+export const GET_PRODUCT_ACTION = "GET_PRODUCT";
+export const ON_LOAD_MORE_BTN_CLICK_ACTION = "ON_LOAD_MORE_BTN_CLICK";
+export const SET_SELECTED_SIZE_ACTION = "SET_SELECTED_SIZE";
+
+// Area action types
+
+export const GET_CITIES_ACTION = "GET_CITIES";
+export const SET_CITIES_ACTION = "SET_CITIES";
+export const GET_DISTRICTS_ACTION = "GET_DISTRICTS";
+export const SET_DISTRICTS_ACTION = "SET_DISTRICTS";
+export const RESET_DISTRICTS_ACTION = "RESET_DISTRICTS";
+
+// Shop action types
+
+export const SET_APP_ALERT_ACTION = "SET_APP_ALERT";
+export const RESET_APP_ALERT_ACTION = "RESET_APP_ALERT";
+export const SET_LANG_ID_ACTION = "SET_LANG_ID";
+export const SET_HAS_CART_ACTION = "SET_HAS_CART";
+export const UPDATE_LANG_ID_ACTION = "UPDATE_LANG_ID";

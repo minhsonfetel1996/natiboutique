@@ -1,0 +1,69 @@
+.TopMenu .wrapper {
+  position: fixed;
+  padding: 20px 0;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.TopMenu .wrapper .container {
+  display: flex;
+}
+
+.TopMenu .wrapper .logo {
+  font-size: 40px;
+  justify-content: center;
+  color: black;
+  font-family: "Dancing Script", cursive;
+}
+
+.TopMenu .wrapper .user-btn {
+  border-radius: 6px;
+  padding-top: 15px;
+}
+
+.TopMenu .wrapper .user-btn .auth-btn {
+  outline: none;
+  border: none;
+  background-color: black;
+  color: #fff;
+  margin-top: 8px;
+  padding: 0 15px;
+  height: 45px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.TopMenu .wrapper .user-btn .auth-btn:focus {
+  box-shadow: none;
+}
+
+/* Mobile devices */
+
+.TopMenuMobile .search-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 3;
+}
+
+.TopMenuMobile .wrapper {
+  background-color: #fff;
+}
+
+.TopMenuMobile .mobile-btn svg {
+  cursor: pointer;
+}
+
+.hide {
+  opacity: 0 !important;
+  position: absolute !important;
+}

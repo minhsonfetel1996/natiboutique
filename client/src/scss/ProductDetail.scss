@@ -1,0 +1,147 @@
+.ProductView {
+  background-color: #fff;
+  margin: 100px 0;
+  width: 100%;
+  .row:first-child {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .img-wrapper {
+    max-height: 540px;
+    margin: 0 auto;
+
+    img {
+      width: 400px;
+      height: 480px;
+      margin: 10px 15px;
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: rgb(13, 17, 54);
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .product_sizes_container {
+    margin-top: 20px;
+    max-width: 500px;
+    .size,
+    .selectedSize {
+      width: 100px;
+      height: 50px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      padding-top: 10px;
+      cursor: pointer;
+    }
+
+    .size {
+      border: 0.8px solid#e8e8e8;
+    }
+
+    .selectedSize {
+      color: white;
+      background-color: black;
+      font-weight: bold;
+    }
+
+    .size:hover {
+      border: 0.8px solid black;
+    }
+
+    .product_size_outOfStock {
+      color: rgb(221, 221, 221);
+      background-color: rgb(247, 247, 247);
+    }
+
+    .product_size_outOfStock:hover {
+      border: 0.8px solid transparent;
+    }
+  }
+
+  .product-price {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .des {
+    margin-top: 4vh;
+    width: 24vw;
+    word-wrap: break-word;
+  }
+}
+
+.ProductView .title,
+.ProductView .des p {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(66, 69, 97);
+  line-height: 1.8;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .ProductView {
+    margin: 50px 30px;
+    .des {
+      margin-top: 4vh;
+      width: 90%;
+      word-wrap: break-word;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .ProductView {
+    margin: 80px 0;
+    .img-wrapper {
+      max-height: 400px;
+      margin: 0 auto;
+
+      img {
+        width: 360px;
+        height: 400px;
+        margin: 10px;
+      }
+    }
+    .product_sizes_container {
+      max-width: 360px;
+      margin: 10px 2px;
+      .size,
+      .selectedSize {
+        width: 70px;
+        height: 35px;
+        border: 0.8px solid#e8e8e8;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 4px;
+        cursor: pointer;
+      }
+
+      .size:hover {
+        border: 0.8px solid black;
+      }
+
+      .product_size_outOfStock {
+        color: rgb(221, 221, 221);
+        background-color: rgb(247, 247, 247);
+      }
+
+      .product_size_outOfStock:hover {
+        border: 0.8px solid transparent;
+      }
+    }
+  }
+}
