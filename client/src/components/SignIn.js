@@ -65,7 +65,7 @@ class SignIn extends AbstractForm {
     } else {
       const { errors, globalErrorMsg } = this.state;
       return (
-        <div className="AuthForm">
+        <div className="auth_container">
           <div className="header">
             <h1>{this.props.t("LABEL_WELCOME_BACK")}</h1>
             <p>{this.props.t("LABEL_LOGIN_HINT")}</p>

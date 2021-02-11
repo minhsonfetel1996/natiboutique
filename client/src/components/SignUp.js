@@ -84,7 +84,7 @@ class SignUp extends AbstractForm {
     const { errors } = this.state;
     const { cities, districts, getDistricts, resetDistricts } = this.props;
     return (
-      <div className="AuthForm">
+      <div className="auth_container">
         <div className="header">
           <h1>{this.props.t("LABEL_SIGN_UP")}</h1>
         </div>

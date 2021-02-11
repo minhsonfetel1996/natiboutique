@@ -3,7 +3,7 @@ import {
   SET_APP_ALERT_ACTION,
   SET_HAS_CART_ACTION,
   SET_LANG_ID_ACTION,
-  UPDATE_LANG_ID_ACTION,
+  UPDATE_LANG_ID_ACTION
 } from "./common/Constants";
 
 export const setAppAlertAction = (payload) => ({

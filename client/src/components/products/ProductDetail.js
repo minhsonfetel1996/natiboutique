@@ -5,7 +5,7 @@ import { Col, Row } from "reactstrap";
 import { get } from "../../services/HttpService";
 import {
   getSelectedSize,
-  setSelectedSizeAction,
+  setSelectedSizeAction
 } from "../../store/ProductsReducer";
 import { LazyImage } from "../../utils/LazyImage";
 import CartBtn from "../CartBtn";
@@ -22,6 +22,9 @@ const ProductDetail = () => {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
+    if (!isReady) {
+      window.scrollTo({ top: -100 });
+    }
     const _id = params.id;
     if (_id && !product) {
       get(`/products/${_id}`)
@@ -35,7 +38,7 @@ const ProductDetail = () => {
       setIsReady(true);
       document.title = product.title || "NaTi Shop";
     }
-  }, [product, params, dispatch]);
+  }, [isReady, product, params, dispatch]);
 
   const isOutOfStock = (prod) => {
     return (
@@ -91,16 +94,14 @@ const ProductDetail = () => {
                       <div
                         className={
                           data.onStock
-                            ? `mb-2 ml-1 ${
-                                data.size === selectedSize
-                                  ? " selectedSize"
-                                  : " size"
-                              }`
-                            : `mb-2 ml-1 product_size_outOfStock ${
-                                data.size === selectedSize
-                                  ? " selectedSize"
-                                  : " size"
-                              }`
+                            ? `mb-2 ml-1 ${data.size === selectedSize
+                              ? " selectedSize"
+                              : " size"
+                            }`
+                            : `mb-2 ml-1 product_size_outOfStock ${data.size === selectedSize
+                              ? " selectedSize"
+                              : " size"
+                            }`
                         }
                         key={index}
                         onClick={() => onSelectSize(data.size)}

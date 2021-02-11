@@ -1,6 +1,6 @@
-.TopMenu .wrapper {
+.shop-header__desktop .wrapper {
   position: fixed;
-  padding: 20px 0;
+  padding-bottom: 10px;
   top: 25px;
   left: 0;
   width: 100%;
@@ -9,61 +9,50 @@
   transition: opacity 0.3s ease;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   opacity: 1;
+
+  .container {
+    display: flex;
+
+    .logo {
+      font-size: 30px;
+      justify-content: center;
+      color: black;
+      font-family: "Dancing Script", cursive;
+    }
+
+    .shop-header__btn-sign-in,
+    .shop-header__shopping-cart {
+      width: 80px;
+      height: 40px;
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 18px;
+
+      .shop-header__shopping-cart__quantity {
+        padding: 2px;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    .shop-header__btn-sign-in:hover,
+    .shop-header__shopping-cart:hover {
+      cursor: pointer;
+    }
+  }
 }
 
-.TopMenu .wrapper .container {
-  display: flex;
-}
-
-.TopMenu .wrapper .logo {
-  font-size: 40px;
-  justify-content: center;
-  color: black;
-  font-family: "Dancing Script", cursive;
-}
-
-.TopMenu .wrapper .user-btn {
-  border-radius: 6px;
-  padding-top: 15px;
-}
-
-.TopMenu .wrapper .user-btn .auth-btn {
-  outline: none;
-  border: none;
-  background-color: black;
-  color: #fff;
-  margin-top: 8px;
-  padding: 0 15px;
-  height: 45px;
-  font-weight: 500;
-  border-radius: 6px;
-}
-
-.TopMenu .wrapper .user-btn .auth-btn:focus {
-  box-shadow: none;
-}
-
-/* Mobile devices */
-
-.TopMenuMobile .search-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  z-index: 3;
-}
-
-.TopMenuMobile .wrapper {
-  background-color: #fff;
-}
-
-.TopMenuMobile .mobile-btn svg {
-  cursor: pointer;
-}
-
-.hide {
-  opacity: 0 !important;
-  position: absolute !important;
+@media screen and (max-width: 687px) {
+  .shop-header__desktop .wrapper {
+    .container {
+      .shop-header__btn-sign-in,
+      .shop-header__shopping-cart {
+        width: auto;
+        height: auto;
+        margin-top: 10px;
+        padding: 2.5px;
+        font-size: 16px;
+      }
+    }
+  }
 }
