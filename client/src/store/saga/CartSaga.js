@@ -1,6 +1,9 @@
 import { put } from "redux-saga/effects";
 import { deleteReq, post } from "../../services/HttpService";
-import { SET_CART_ITEMS_ACTION } from "../common/Constants";
+import {
+  SET_APP_ALERT_ACTION,
+  SET_CART_ITEMS_ACTION,
+} from "../common/Constants";
 
 export function* addToCart(action) {
   const data = yield post("/cart", {
@@ -21,6 +24,14 @@ export function* addToCart(action) {
     yield put({
       type: SET_CART_ITEMS_ACTION,
       json: { ...data },
+    });
+    yield put({
+      type: SET_APP_ALERT_ACTION,
+      payload: {
+        isAlertOpen: true,
+        success: data.success,
+        message: data.message,
+      },
     });
   }
 }

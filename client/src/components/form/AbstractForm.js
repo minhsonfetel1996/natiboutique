@@ -10,13 +10,45 @@ class AbstractForm extends React.Component {
       globalErrorMsg: null,
     };
   }
-
+  /**
+   * Init form data
+   *
+   * @memberof AbstractForm
+   */
   initData() {}
-  submitUrl() {}
-  processSuccessfulResponse(response) {}
-  processUnsuccessfulResponse(response) {}
+  /**
+   * Prepare submit url
+   *
+   * @memberof AbstractForm
+   */
+  /**
+   * Handle response with success status
+   *
+   * @param {*} response
+   * @memberof AbstractForm
+   */
+  handleSuccessfullyResponse(response) {}
+  /**
+   * Handle response with failed status
+   *
+   * @param {*} response
+   * @memberof AbstractForm
+   */
+  handleUnsuccessfullyResponse(response) {}
+  /**
+   * Prepare form schema validations
+   *
+   * @memberof AbstractForm
+   */
   getSchemaValidations() {}
-
+  /**
+   * Validate value of form control in form
+   *
+   * @param {*} name
+   * @param {*} value
+   * @return {*}
+   * @memberof AbstractForm
+   */
   validateProperty(name, value) {
     const validators = this.getSchemaValidations()[name];
     const errors = validators.map((vFn) => vFn(name, value));
@@ -24,7 +56,12 @@ class AbstractForm extends React.Component {
       ? errors.filter((error) => !!error)[0]
       : null;
   }
-
+  /**
+   * Validate form data
+   *
+   * @return {*}
+   * @memberof AbstractForm
+   */
   validate() {
     let errors = null;
     Object.keys(this.state.data).forEach((name) => {
@@ -38,7 +75,12 @@ class AbstractForm extends React.Component {
     });
     return errors;
   }
-
+  /**
+   *
+   *
+   * @param {*} data
+   * @memberof AbstractForm
+   */
   setData = (data) => {
     this.setState((preState) => ({
       ...preState,
@@ -48,7 +90,12 @@ class AbstractForm extends React.Component {
       },
     }));
   };
-
+  /**
+   *
+   *
+   * @param {*} errors
+   * @memberof AbstractForm
+   */
   setErrors = (errors) => {
     this.setState((preState) => ({
       ...preState,
@@ -58,14 +105,24 @@ class AbstractForm extends React.Component {
       },
     }));
   };
-
+  /**
+   *
+   *
+   * @param {*} event
+   * @memberof AbstractForm
+   */
   handleInput = (event) => {
     if (event) {
       event.preventDefault();
     }
     this.setData({ [event.target.name]: event.target.value });
   };
-
+  /**
+   * Handle submit form event
+   *
+   * @param {*} event
+   * @memberof AbstractForm
+   */
   handleSubmit(event) {
     if (event) {
       event.preventDefault();
@@ -90,14 +147,18 @@ class AbstractForm extends React.Component {
       this.submit();
     }
   }
-
+  /**
+   * Submit form
+   *
+   * @memberof AbstractForm
+   */
   submit() {
     post(this.submitUrl(), this.state.data)
       .then((res) => {
         if (res.data && res.data.success) {
-          this.processSuccessfulResponse(res.data);
+          this.handleSuccessfullyResponse(res.data);
         } else {
-          this.processUnsuccessfulResponse(res.data);
+          this.handleUnsuccessfullyResponse(res.data);
         }
       })
       .catch((error) => {
@@ -108,7 +169,12 @@ class AbstractForm extends React.Component {
         });
       });
   }
-
+  /**
+   *
+   *
+   * @param {*} globalErrorMsg
+   * @memberof AbstractForm
+   */
   renderGlobalErrorMsg = (globalErrorMsg) => {
     return (
       <>

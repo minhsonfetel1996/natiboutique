@@ -5,7 +5,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getCartItems } from "../store/CartReducer";
-import { getSelectedSize } from "../store/ProductsReducer";
+import {
+  getSelectedSize,
+  setSelectedSizeAction,
+} from "../store/ProductsReducer";
 import { resetAppAlertAction, setAppAlertAction } from "../store/ShopReducer";
 
 const CartBtn = (props) => {
@@ -33,12 +36,13 @@ const CartBtn = (props) => {
       window.scrollTo({ top: 0 });
       dispatch(addToCart(product._id, selectedSize));
       dispatch(resetAppAlertAction());
+      dispatch(setSelectedSizeAction({ selectedSize: null }));
     } else {
       dispatch(
         setAppAlertAction({
           isAlertOpen: true,
           success: false,
-          message: t("UNSELECT_SIZE"),
+          message: "Mời bạn chọn size",
         })
       );
     }

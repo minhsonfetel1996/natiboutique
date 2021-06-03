@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router";
+import CustomizeAlertComponent from "../components/CustomizeAlertComponent";
 import Header from "../components/Header";
 import LogoutComponent from "../components/LogoutComponent";
 import ProductDetail from "../components/products/ProductDetail";
@@ -14,6 +15,7 @@ const HomePage = () => {
   return (
     <div className="Home">
       <Header />
+      <CustomizeAlertComponent />
       <Switch>
         <Route exact path="/sign-in" component={SignIn} />
         <Route exact path="/sign-up" component={SignUp} />

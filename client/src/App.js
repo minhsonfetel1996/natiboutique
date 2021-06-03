@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SpinnerLoading from "./components/SpinnerLoading";
 import { configI18n } from "./resources/i18N_config";
 import CheckOutRoute from "./routes/CheckoutRoute";
-import { getClickLanguageFlag, getLangIdFromState } from "./store/ShopReducer";
+import { getLangIdFromState } from "./store/ShopReducer";
 
 const HomePage = React.lazy(() => import("./pages/Home"));
 const CheckoutPage = React.lazy(() => import("./pages/Checkout"));

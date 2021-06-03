@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Row } from "reactstrap";
 import { LazyImage } from "../../utils/LazyImage";
 import ProductPrices from "./ProductPrices";
@@ -27,13 +26,13 @@ const Product = ({ item }) => {
 
   return (
     <div className="product">
-      <Link to={`/products/${customItem._id}`} className="fade-in">
+      <a href={`/products/${customItem._id}`} className="fade-in">
         {!newImageSrc && (
           <LazyImage
             title={customItem.title}
             dataSrc={getImageDataForMainProduct(customItem.images)}
             dataSrcset={getImageDataForMainProduct(customItem.images)}
-            alt="placeholder"
+            alt={customItem.title}
             fitSize={false}
           />
         )}
@@ -42,12 +41,12 @@ const Product = ({ item }) => {
             title={customItem.title}
             dataSrc={newImageSrc}
             dataSrcset={newImageSrc}
-            alt="placeholder"
+            alt={customItem.title}
             newImageSrc={newImageSrc}
             fitSize={true}
           />
         )}
-      </Link>
+      </a>
       {customItem.color_ways && (
         <Row className="product-card__colorways">
           {customItem.color_ways.map((colorwayImg, index) => {
@@ -64,7 +63,7 @@ const Product = ({ item }) => {
                   title={customItem.title}
                   dataSrc={colorwayImg}
                   dataSrcset={colorwayImg}
-                  alt="placeholder"
+                  alt={customItem.title}
                   width="55"
                   height="55"
                   newImageSrc={colorwayImg}

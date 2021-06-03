@@ -45,7 +45,7 @@ const CheckoutPage = () => {
       <Typography variant="h4" align="center" style={{ paddingTop: 20 }}>
         {t("LABEL_CHECKOUT")}
       </Typography>
-      <Row className="pl-3 pr-3">
+      <Row className="justify-content-center mx-4">
         <Col sm={12}>
           <Stepper activeStep={activeStep}>
             {steps.map((step, index) => {

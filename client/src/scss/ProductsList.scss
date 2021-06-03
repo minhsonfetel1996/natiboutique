@@ -1,13 +1,27 @@
 .products-list {
-  margin: 140px 0 50px 0;
+  max-width: 65vw;
+  margin: 12vh auto 5vh;
   .row {
-    justify-content: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    justify-content: space-between;
   }
 
   .load-more {
     color: white;
     background-color: black;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .products-list {
+    max-width: 86vw;
+    margin: 12vh auto 5vh;
+    .row {
+      justify-content: center;
+    }
+
+    .load-more {
+      color: white;
+      background-color: black;
+    }
   }
 }

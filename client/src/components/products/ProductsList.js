@@ -72,7 +72,7 @@ const ProductsList = () => {
       {products !== null && products.length === 0 && (
         <Row className="justify-content-center">{t("LABEL_NO_RESULT")}</Row>
       )}
-      <Row className="m-0 w-100 d-flex justify-content-center">
+      <Row className="m-0 mt-5 w-100 d-flex justify-content-center">
         {isLoading ? (
           <Spinner style={{ color: "black" }} className="mt-3 mb-1" />
         ) : (

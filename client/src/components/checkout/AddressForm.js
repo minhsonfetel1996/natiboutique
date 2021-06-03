@@ -63,13 +63,8 @@ class AddressForm extends AbstractForm {
 
   render() {
     const { errors } = this.state;
-    const {
-      cities,
-      districts,
-      getDistricts,
-      resetDistricts,
-      history,
-    } = this.props;
+    const { cities, districts, getDistricts, resetDistricts, history } =
+      this.props;
 
     return (
       <Row className="pl-5 pr-5 pt-4 pb-4">
@@ -161,7 +156,7 @@ class AddressForm extends AbstractForm {
               </Col>
             </Row>
             <Row style={{ paddingTop: 20 }}>
-              <Col sm={6}>
+              <Col sm={6} xs={12}>
                 <Button
                   size="lg"
                   block
@@ -172,7 +167,12 @@ class AddressForm extends AbstractForm {
                   {this.props.t("LABEL_BACK_TO_CART")}
                 </Button>
               </Col>
-              <Col sm={6} style={{ textAlign: "right" }}>
+              <Col
+                sm={6}
+                xs={12}
+                className="my-2"
+                style={{ textAlign: "right" }}
+              >
                 <Button size="lg" block type="submit">
                   {this.props.t("LABEL_CONTINUE")}
                 </Button>

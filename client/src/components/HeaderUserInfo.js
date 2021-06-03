@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getCurrentUser } from "../store/AuthReducer";
 import Burger from "./Burger";
 
@@ -18,16 +17,16 @@ const HeaderUserInfo = () => {
     <div className="User h-100">
       <ul className={active ? "nav-links nav-active" : "nav-links"}>
         <li className={active ? "item-active" : ""}>
-          <Link to="/profile">{t("LABEL_PROFILE")}</Link>
+          <a href="/profile">{t("LABEL_PROFILE")}</a>
         </li>
         <li className={active ? "item-active" : ""}>
-          <Link to="/checkout">{t("LABEL_CHECKOUT")}</Link>
+          <a href="/checkout">{t("LABEL_CHECKOUT")}</a>
         </li>
         <li className={active ? "item-active" : ""}>
-          <Link to="/order">{t("LABEL_TOTAL")}</Link>
+          <a href="/order">{t("LABEL_TOTAL")}</a>
         </li>
         <li className={active ? "item-active" : ""}>
-          <Link to="/logout">{t("LABEL_LOG_OUT")}</Link>
+          <a href="/logout">{t("LABEL_LOG_OUT")}</a>
         </li>
       </ul>
       <div className="welcome" onClick={handleBtnClick}>

@@ -20,24 +20,34 @@
       font-family: "Dancing Script", cursive;
     }
 
-    .shop-header__btn-sign-in,
-    .shop-header__shopping-cart {
-      width: 80px;
-      height: 40px;
-      margin-top: 10px;
-      padding: 5px;
-      font-size: 18px;
+    .buttons {
+      display: flex;
+      .shop-header__btn-sign-in,
+      .shop-header__shopping-cart {
+        width: 80px;
+        height: 40px;
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 18px;
 
-      .shop-header__shopping-cart__quantity {
-        padding: 2px;
-        position: absolute;
-        top: 0;
+        .shop-header__shopping-cart__quantity {
+          padding: 2px;
+          position: absolute;
+          top: 0;
+          .badge {
+            background-color: $primary;
+            color: white;
+          }
+        }
       }
-    }
 
-    .shop-header__btn-sign-in:hover,
-    .shop-header__shopping-cart:hover {
-      cursor: pointer;
+      .shop-header__btn-sign-in:hover,
+      .shop-header__shopping-cart:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        transition: 0.2s;
+        font-size: 20px;
+      }
     }
   }
 }
@@ -45,13 +55,18 @@
 @media screen and (max-width: 687px) {
   .shop-header__desktop .wrapper {
     .container {
-      .shop-header__btn-sign-in,
-      .shop-header__shopping-cart {
-        width: auto;
-        height: auto;
-        margin-top: 10px;
-        padding: 2.5px;
-        font-size: 16px;
+      .buttons {
+        display: flex;
+        margin-left: auto;
+        .shop-header__btn-sign-in,
+        .shop-header__shopping-cart {
+          width: auto;
+          height: auto;
+          margin-top: 10px;
+          padding: 2.5px;
+          font-size: 16px;
+          margin-right: 20px;
+        }
       }
     }
   }

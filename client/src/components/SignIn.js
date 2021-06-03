@@ -42,7 +42,7 @@ class SignIn extends AbstractForm {
     return "/auth/login";
   }
 
-  processSuccessfulResponse(response) {
+  handleSuccessfullyResponse(response) {
     this.props.storeUser(response.user);
     this.props.setAlertOpen({
       isAlertOpen: true,
@@ -52,7 +52,7 @@ class SignIn extends AbstractForm {
     window.location.replace("/");
   }
 
-  processUnsuccessfulResponse(response) {
+  handleUnsuccessfullyResponse(response) {
     this.setState((preState) => ({
       ...preState,
       globalErrorMsg: response.message,

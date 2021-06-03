@@ -1,6 +1,7 @@
 .auth_container {
-  margin: 5% 15%;
-  padding: 40px 60px 10px;
+  position: relative;
+  max-width: 480px;
+  margin: 120px auto;
   .header {
     text-align: center;
     margin-bottom: 20px;
@@ -72,9 +73,10 @@
   color: #de5959;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .auth_container {
-    margin: 5% 5%;
-    padding: 20px;
+    position: relative;
+    max-width: 80vw;
+    margin: 120px auto;
   }
 }

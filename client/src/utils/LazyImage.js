@@ -32,7 +32,7 @@ export const LazyImage = ({
   title,
   dataSrc,
   dataSrcset,
-  alt,
+  alt="placeholder",
   newImageSrc,
   fitSize,
   thumbnail,
@@ -53,7 +53,7 @@ export const LazyImage = ({
     <Image
       key={title}
       title={title}
-      className="img lazy"
+      className="img lazy fade-in"
       src={imageSrc}
       data-src={fitSize ? initDataSrcSet(dataSrc) : dataSrc}
       data-srcset={fitSize ? initDataSrcSet(dataSrcset) : dataSrcset}

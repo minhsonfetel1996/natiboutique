@@ -1,19 +1,13 @@
 .ProductView {
-  background-color: #fff;
-  margin: 100px 0;
-  width: 100%;
-  .row:first-child {
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  width: 88vw;
+  margin: 10vh auto;
 
   .img-wrapper {
-    max-height: 540px;
+    max-height: 480px;
     margin: 0 auto;
 
     img {
-      width: 400px;
+      width: 360px;
       height: 480px;
       margin: 10px 15px;
     }
@@ -75,9 +69,13 @@
     margin-bottom: 20px;
   }
 
+  .sale-price {
+    margin-left: 10px;
+  }
+
   .des {
     margin-top: 4vh;
-    width: 24vw;
+    max-width: 98%;
     word-wrap: break-word;
   }
 }
@@ -89,36 +87,62 @@
   color: rgb(66, 69, 97);
   line-height: 1.8;
   overflow: hidden;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .ProductView {
-    margin: 50px 30px;
-    .des {
-      margin-top: 4vh;
-      width: 90%;
-      word-wrap: break-word;
+    max-width: 80vw;
+    margin: 10vh auto;
+    .img-wrapper {
+      img {
+        width: 300px;
+        height: 360px;
+        margin: 10px auto;
+      }
+    }
+    .product_sizes_container {
+      margin: 15px 0;
+      .size,
+      .selectedSize {
+        width: 70px;
+        height: 35px;
+        border: 0.8px solid#e8e8e8;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 4px;
+        cursor: pointer;
+      }
+
+      .size:hover {
+        border: 0.8px solid black;
+      }
+
+      .product_size_outOfStock {
+        color: rgb(221, 221, 221);
+        background-color: rgb(247, 247, 247);
+      }
+
+      .product_size_outOfStock:hover {
+        border: 0.8px solid transparent;
+      }
     }
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 480px) {
   .ProductView {
-    margin: 80px 0;
+    max-width: 98vw;
+    margin: 10vh auto;
+    padding: 10px;
     .img-wrapper {
-      max-height: 400px;
-      margin: 0 auto;
-
       img {
-        width: 360px;
-        height: 400px;
-        margin: 10px;
+        width: 300px;
+        height: 360px;
+        margin: 10px auto;
       }
     }
     .product_sizes_container {
-      max-width: 360px;
-      margin: 10px 2px;
       .size,
       .selectedSize {
         width: 70px;

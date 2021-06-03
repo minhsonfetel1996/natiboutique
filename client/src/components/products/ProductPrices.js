@@ -11,14 +11,14 @@ const ProductPrices = ({ price }) => {
       <div
         className={
           price.discounted
-            ? "product-price reduced"
-            : "product-price is-current-price"
+            ? "reduced"
+            : "is-current-price"
         }
       >
         {formatPrice(price.oldPrice)}
       </div>
       {price.discounted && (
-        <div className="product-price is-current-price sale-price">
+        <div className="is-current-price sale-price">
           {formatPrice(price.currentPrice)}
         </div>
       )}

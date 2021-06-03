@@ -5,7 +5,7 @@ import { Col, Row } from "reactstrap";
 import { get } from "../../services/HttpService";
 import {
   getSelectedSize,
-  setSelectedSizeAction
+  setSelectedSizeAction,
 } from "../../store/ProductsReducer";
 import { LazyImage } from "../../utils/LazyImage";
 import CartBtn from "../CartBtn";
@@ -59,8 +59,8 @@ const ProductDetail = () => {
       <div className="ProductView py-5">
         <div>
           <Row>
-            <Col md="7" sm="8" className="mb-5">
-              <div className="img-wrapper visible-md visible-sm">
+            <Col md="7" xs={12} className="mb-5">
+              <div className="img-wrapper visible-md">
                 <Row style={{ marginRight: 0 }}>
                   {product.images &&
                     product.images.map((image, index) => {
@@ -76,11 +76,11 @@ const ProductDetail = () => {
                     })}
                 </Row>
               </div>
-              <div className="img-wrapper visible-xs">
+              <div className="img-wrapper visible-sm visible-xs">
                 <SimpleSlider items={product.images} />
               </div>
             </Col>
-            <Col md="4" sm="4">
+            <Col md="5" xs={12}>
               <div className="title">
                 <h1>{product.title}</h1>
               </div>
@@ -94,14 +94,16 @@ const ProductDetail = () => {
                       <div
                         className={
                           data.onStock
-                            ? `mb-2 ml-1 ${data.size === selectedSize
-                              ? " selectedSize"
-                              : " size"
-                            }`
-                            : `mb-2 ml-1 product_size_outOfStock ${data.size === selectedSize
-                              ? " selectedSize"
-                              : " size"
-                            }`
+                            ? `mb-2 ml-1 ${
+                                data.size === selectedSize
+                                  ? " selectedSize"
+                                  : " size"
+                              }`
+                            : `mb-2 ml-1 product_size_outOfStock ${
+                                data.size === selectedSize
+                                  ? " selectedSize"
+                                  : " size"
+                              }`
                         }
                         key={index}
                         onClick={() => onSelectSize(data.size)}
