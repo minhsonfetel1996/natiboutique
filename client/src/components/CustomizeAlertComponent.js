@@ -35,7 +35,7 @@ const CustomizeAlertComponent = () => {
 
   return (
     <div className="visible-md" aria-live="polite" aria-atomic="true" style={{ position: "relative" }}>
-      <div style={{ position: "absolute", top: 10, right: 0 }}>
+      <div style={{ position: "fixed", top: 100, right: 0 }}>
         <Toast>
           <Toast.Header style={{ color: alertData.success ? "green" : "red" }}>
             <span>

@@ -75,7 +75,7 @@
 
   .des {
     margin-top: 4vh;
-    max-width: 98%;
+    max-width: 65%;
     word-wrap: break-word;
   }
 }
@@ -127,6 +127,11 @@
         border: 0.8px solid transparent;
       }
     }
+    .des {
+      margin-top: 4vh;
+      max-width: 90%;
+      word-wrap: break-word;
+    }
   }
 }
 
@@ -166,6 +171,10 @@
       .product_size_outOfStock:hover {
         border: 0.8px solid transparent;
       }
+    }
+
+    .des {
+      max-width: 90%;
     }
   }
 }
