@@ -163,6 +163,7 @@ class AddressForm extends AbstractForm {
                   onClick={() => {
                     history.push("/basket");
                   }}
+                  className="my-2"
                 >
                   {this.props.t("LABEL_BACK_TO_CART")}
                 </Button>

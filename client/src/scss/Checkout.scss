@@ -1,9 +1,10 @@
 #checkout-container {
-  margin: 100px 30vw auto 30vw;
+  max-width: 40vw;
+  margin: 15vh auto;
 }
 
 @media screen and (max-width: 980px) {
   #checkout-container {
-    margin: 60px 8vw auto 2vw;
+    max-width: 92vw;
   }
 }
