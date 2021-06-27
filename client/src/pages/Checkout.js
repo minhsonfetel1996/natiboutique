@@ -1,12 +1,10 @@
 import { Paper, Step, StepLabel, Stepper, Typography } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { Col, Row } from "reactstrap";
 import AddressForm from "../components/checkout/AddressForm";
 import PaymentForm from "../components/checkout/PaymentForm";
-import { setHasCartAction } from "../store/ShopReducer";
-
 const CheckoutPage = () => {
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
@@ -32,13 +30,6 @@ const CheckoutPage = () => {
     ) : (
       <PaymentForm backStep={backStep} />
     );
-
-  useEffect(() => {
-    dispatch(setHasCartAction(true));
-    return function cleanup() {
-      dispatch(setHasCartAction(false));
-    };
-  }, [dispatch]);
 
   return (
     <Paper id="checkout-container">

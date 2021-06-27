@@ -1,6 +1,6 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Col, Image, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,25 +11,19 @@ import {
   getCartItems,
   getTotalBasket,
   removeItem,
-  setCartClicked,
+  setCartClicked
 } from "../store/CartReducer";
-import { setHasCartAction } from "../store/ShopReducer";
+import { isAppReady } from "../store/ShopReducer";
 import { formatPrice } from "../utils/AppUtils";
 
 const BasketPage = () => {
+  const isCartEmpty = useSelector(checkIsCartEmpty);
   const cartItems = useSelector(getCartItems);
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const history = useHistory();
-  const isCartEmpty = useSelector(checkIsCartEmpty);
   const totalBasket = useSelector(getTotalBasket);
-
-  useEffect(() => {
-    dispatch(setHasCartAction(true));
-    return function cleanup() {
-      dispatch(setHasCartAction(false));
-    };
-  }, [dispatch]);
+  const appReady = useSelector(isAppReady);
 
   const onRemoveItemClicked = (item) => {
     dispatch(removeItem(`${item._id}|${item.selectedSize}`, false));
@@ -39,6 +33,10 @@ const BasketPage = () => {
     dispatch(setCartClicked(false));
     history.push(`/products/${_id}`);
   };
+
+  if (!appReady) {
+    return null;
+  }
 
   if (isCartEmpty) {
     return <Redirect to="/products" />;

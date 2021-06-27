@@ -5,6 +5,7 @@ import {
   SET_APP_ALERT_ACTION,
   SET_CART_ITEMS_ACTION,
   SET_LANG_ID_ACTION,
+  SET_READY_APP_ACTION,
   SET_USER_ACTION,
 } from "../common/Constants";
 
@@ -23,6 +24,10 @@ export function* getCurrentUser() {
     yield put({
       type: SET_LANG_ID_ACTION,
       payload: { langId: data.data.user.currentLang },
+    });
+    yield put({
+      type: SET_READY_APP_ACTION,
+      payload: { ready: true },
     });
   } else {
     yield put({
